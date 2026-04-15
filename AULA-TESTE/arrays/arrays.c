@@ -2,17 +2,22 @@
 
 int main()
 {
-    float notas[10];
+    int n;
+    scanf("%d", &n);
+    
+    int nums[n];
 
-    for(int i=0; i < 10; i++)
+    for (int i = 0; i < n; i++)
     {
-        scanf("%f", &notas[i]);
+        scanf("%d", &nums[i]);
     }
-
-    for (int i = 0; i < 10; i++)
+    
+    for (int i = n-1; i  >= 0; i--)
     {
-        if(notas[i] >= 6)
-            printf("%.2f ", notas[i]);
+        if(nums[i] % 2 == 0)
+        {
+            printf("%d ", nums[i]);
+        }
     }
     
 
