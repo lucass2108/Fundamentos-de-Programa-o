@@ -1,22 +1,31 @@
 #include <stdio.h>
+#include <math.h>
+#include <stdbool.h>
 
 int main()
 {
-    int num, res = 1;
-    scanf("%d", &num);
+    int numIt;
+    float erro, x0, x1;
+    bool raizEncontrada = false;
 
-    for(int i = 1; i<=num; i++)
+    scanf("%f %f %d", &x0, &erro, &numIt);
+
+    for(int i=0; i < numIt; i++)
     {
-        if(num == 0)
+        x1 = x0 - (5*x0*x0*x0+3*x0*x0-3)/(15*x0*x0+6*x0);
+        if(fabs(x1 -x0) <= erro)
         {
+            printf("%f", x1);
+            raizEncontrada = true;
             break;
         }
-
-        res *= i;
+        x0 = x1;
     }
 
-    printf("%d", res);
-
+    if(!raizEncontrada)
+    {
+        printf("Nao foi possivel calcular a raiz");
+    }
 
     return 0;
 }
