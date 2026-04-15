@@ -2,30 +2,19 @@
 
 int main()
 {
-    int numNotas;
-    scanf("%d", &numNotas);
+    float notas[10];
 
-    float notas[numNotas], media;
-    media = 0;
-
-    for(int i=0; i < numNotas; i++)
+    for(int i=0; i < 10; i++)
     {
         scanf("%f", &notas[i]);
     }
 
-    for(int i=0; i < numNotas; i++){
-        media += notas[i];
-    }
-
-    media /= numNotas;
-
-    for (int i = 0; i < numNotas; i++)
+    for (int i = 0; i < 10; i++)
     {
-        if (notas[i] > media)
-        {
+        if(notas[i] >= 6)
             printf("%.2f ", notas[i]);
-        }
-        
     }
     
+
+    return 0;
 }
