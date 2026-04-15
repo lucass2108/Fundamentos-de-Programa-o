@@ -3,25 +3,27 @@
 
 int main()
 {
-    int n;
-    scanf("%d", &n);
+  int n, maior = 0, pos;
+  scanf("%d", &n);
 
-    float nums[n], media, desvio, soma = 0.0;
+  int nums[n];
 
-    for (int i = 0; i < n; i++)
+  for(int i = 0; i < n; i++)
+  {
+    scanf("%d", &nums[i]);
+  }
+
+  for(int i = 0; i < n; i++)
+  {
+    if (nums[i] > maior)
     {
-        scanf("%f", &nums[i]);
-        media += nums[i];
+        maior = nums[i];
+        pos = i;
     }
-    media/= n;
+    
+  }
 
-    for(int i = 0; i < n; i++)
-    {
-        soma += pow(nums[i] - media, 2);
-    }
-    desvio = sqrt(soma/n);
-
-    printf("%.3f %.3f", media, desvio);
+      printf("%d %d", maior, pos);
 
     return 0;
 }
