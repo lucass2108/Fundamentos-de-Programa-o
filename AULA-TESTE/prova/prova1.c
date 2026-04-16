@@ -3,16 +3,16 @@
 
 int main()
 {
-    int n;
-    scanf("%d", &n);
+    float num, soma, d=1.0;
+    scanf("%f", &num);
 
-    for(int i =1; i<=n; i++)
+    for(int i = 1.0; i <= num; i++)
     {
-        if(sqrt(i) - (int)sqrt(i) == 0)
-        {
-            printf("%d ", i);
-        }
+        soma += d/i;
+        d += 2.0;
     }
-
+    
+    printf("%.3f\n", soma);
+    
     return 0;
 }
