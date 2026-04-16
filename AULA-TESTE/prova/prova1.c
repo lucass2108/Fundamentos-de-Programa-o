@@ -1,21 +1,30 @@
 #include <stdio.h>
 #include <math.h>
+#include <stdbool.h>
 
 int main()
 {
-    float num, soma, i;
-    while (num >=0)
+    int num;
+    bool isPrimo;
+    scanf("%d", &num);
+
+    for(int i = 2; i<= num; i++)
     {
-        scanf("%f", &num);
-        if (num >= 0)
+        isPrimo = true;
+        for(int j = 2; j < i; j++)
         {
-            soma += num;
-            i++;
+            if(i % j == 0)
+            {
+                isPrimo = false;
+                break;
+            }
         }
+        if(isPrimo)
+        {
+            printf("%d ", i);
+        }
+
     }
 
-    printf("%.2f", soma/i);
-    
-    
     return 0;
 }
