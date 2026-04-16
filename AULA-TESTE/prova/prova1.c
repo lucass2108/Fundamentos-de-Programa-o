@@ -4,27 +4,18 @@
 
 int main()
 {
-    int num;
-    bool isPrimo;
-    scanf("%d", &num);
-
-    for(int i = 2; i<= num; i++)
-    {
-        isPrimo = true;
-        for(int j = 2; j < i; j++)
-        {
-            if(i % j == 0)
-            {
-                isPrimo = false;
-                break;
-            }
-        }
-        if(isPrimo)
-        {
-            printf("%d ", i);
-        }
-
+    int n = 0, soma, produto = 1;
+    while(n <= 0){
+          scanf("%d", &n);
     }
+
+    for(int i = 1; i<=n; i++)
+    {
+        soma += i;
+        produto *= i;
+    } 
+
+    printf("%d %d", soma, produto);
 
     return 0;
 }
