@@ -2,30 +2,39 @@
 #include <math.h>
 
 int main()
-{
-    int n;
-    scanf("%d", &n);
+{   
+    float temp[6], maior, menor = 100000, media;
 
-    int arr[n], arr2[n], arr3[n];
-
-    for (int i = 0; i < n; i++)
+    for(int i=0; i<6; i++)
     {
-        scanf("%d", &arr[i]);
+        scanf("%f", &temp[i]);
     }
 
-    for (int i = 0; i < n; i++)
+    for(int i = 0; i<6; i++)
     {
-        scanf("%d", &arr2[i]);
+        if(temp[i] > maior)
+            maior = temp[i];
+        
+        if(temp[i] < menor)
+            menor = temp[i];
+
+        media += temp[i];
     }
 
-    for(int i = 0; i < n; i++)
+    media = media / 6;
+
+    printf("%.2f %.2f %.2f\n", menor, maior, media);
+    if(media >= 18 && media <= 22)
     {
-        arr3[i] = arr[i] + arr2[i];
-        printf("%d ", arr3[i]);
+        printf("ok");
+    }
+    else
+    {
+        printf("nok");
     }
 
 
-    
+
 
     return 0;
 }
