@@ -3,27 +3,29 @@
 
 int main()
 {
-  int n, maior = 0, pos;
-  scanf("%d", &n);
+    int n;
+    scanf("%d", &n);
 
-  int nums[n];
+    int arr[n], arr2[n], arr3[n];
 
-  for(int i = 0; i < n; i++)
-  {
-    scanf("%d", &nums[i]);
-  }
-
-  for(int i = 0; i < n; i++)
-  {
-    if (nums[i] > maior)
+    for (int i = 0; i < n; i++)
     {
-        maior = nums[i];
-        pos = i;
+        scanf("%d", &arr[i]);
     }
-    
-  }
 
-      printf("%d %d", maior, pos);
+    for (int i = 0; i < n; i++)
+    {
+        scanf("%d", &arr2[i]);
+    }
+
+    for(int i = 0; i < n; i++)
+    {
+        arr3[i] = arr[i] + arr2[i];
+        printf("%d ", arr3[i]);
+    }
+
+
+    
 
     return 0;
 }
