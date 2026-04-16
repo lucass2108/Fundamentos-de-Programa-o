@@ -3,11 +3,16 @@
 
 int main()
 {
-    int num;
-    scanf("%d", &num);
+    int n;
+    scanf("%d", &n);
 
-    for(int i= num; i >0; i--)
-        printf("%d ", i);
+    for(int i =1; i<=n; i++)
+    {
+        if(sqrt(i) - (int)sqrt(i) == 0)
+        {
+            printf("%d ", i);
+        }
+    }
 
     return 0;
 }
