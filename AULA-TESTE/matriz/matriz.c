@@ -2,33 +2,50 @@
 
 int main()
 {
-    int n, k =1;
-    scanf("%d", &n);
+    int m, n;
+    scanf("%d %d", &m, &n);
 
-    int matriz[n][n];
+    int matriz[m][n];
+    int matrizT[n][m];
 
-    for(int i =0; i< n; i++)
+    for(int i = 0; i< m; i++)
     {
         for(int j = 0; j < n; j++)
         {
-            if (i > n-1)
-            {
-                break;
-            }
-            
-            if(j == k)
-            {
-                matriz[i][j] = 1;
-            }
-            else
-            {
-                matriz[i][j] = 0;
-            }
-            printf("%d ", matriz[i][j]);
+            scanf("%d" , &matriz[i][j]);
         }
-        k++;
+    }
+
+    for(int i =0; i < m; i++)
+    {
+        for(int j =0; j < n; j++)
+        {
+            matrizT[j][i] = matriz[i][j];
+        }
+    }
+
+    for(int i = 0; i< m; i++)
+    {
+        for(int j = 0; j < n; j++)
+        {
+            printf("%3d " , matriz[i][j]);
+        }
         printf("\n");
     }
+
+    printf("\n");
+
+    for(int i =0; i < n; i++)
+    {
+        for(int j = 0; j < m; j++)
+        {
+            printf("%3d " , matrizT[i][j]);
+        }
+        printf("\n");
+    }
+
+    printf("\n");
+
 
 
     return 0;
