@@ -1,13 +1,15 @@
 #include <stdio.h>
-#include <Math.h>
 
 int main()
 {
-    int matriz[7][7], k =0;
+    int n, k =0;
+    scanf("%d", &n);
 
-    for(int i =0; i< 7; i++)
+    int matriz[n][n];
+
+    for(int i =0; i< n; i++)
     {
-        for(int j = 0; j < 7; j++)
+        for(int j = 0; j < n; j++)
         {
             if(j == k)
             {
