@@ -1,37 +1,29 @@
 #include <stdio.h>
 #include <math.h>
+#include <stdbool.h>
 
-float desvioPadrao(float numeros[], int qtdNum)
+void nr(float valorInicial, float erro, int qtdTentativas)
 {
-    float media, desvio;
+    bool encontrouRaiz = false;
+    float valorAnterior = valorInicial;
 
-    for(int i =0; i<qtdNum; i++)
+    for(int i =0; i< qtdTentativas; i++)
     {
-        media += numeros[i];
-    }
-    media /= qtdNum;
-    
-    for (int i = 0; i < qtdNum; i++)
-    {
-        numeros[i] = pow(numeros[i] - media, 2);
-        desvio += numeros[i];
-    }
+        valorInicial = valorAnterior - ((3*pow(valorAnterior,3)) + (2*pow(valorAnterior, 2)) - 7) / (9*pow(valorAnterior, 2) + 4*valorAnterior);
+        if(fabs(valorAnterior - valorInicial) <= erro)
+        {
+            printf("Raiz: %f\n", valorInicial);
+            encontrouRaiz = true;
+            break;
+        }
 
-    return (float)sqrt(desvio / qtdNum);
-}
+        valorAnterior = valorInicial;
 
-int main()
-{
-    int num;
-    scanf("%d", &num);
-    float numeros[num];
-    for (int i = 0; i < num; i++)
-    {
-        scanf("%f", &numeros[i]);
     }
 
-    printf("%.3f", desvioPadrao(numeros, num));
+    if(!encontrouRaiz)
+    {
+        printf("Nao foi possivel calcular a raiz com a precisao solicitada.");
+    }
 
-
-    return 0;
 }
