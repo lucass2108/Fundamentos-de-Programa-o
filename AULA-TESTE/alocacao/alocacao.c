@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int trocar(int* i, int* j)
+int trocar(int *i, int *j)
 {
     int temp = *i;
     *i = *j;
@@ -16,7 +16,7 @@ int main()
 
     trocar(&i, &j);
 
-    printf("%d %d",i , j);
+    printf("%d %d", i, j);
 
     return 0;
 }
