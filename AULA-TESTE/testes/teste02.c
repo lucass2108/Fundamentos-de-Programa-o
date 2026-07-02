@@ -53,6 +53,9 @@ int main()
     }
 
 
+    free(a);
+    free(a2);
+
 
     return 0;
 }
